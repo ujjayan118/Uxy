@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vanguard Construction</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      color: orange;
+      scroll-behavior: smooth;
+    }
+
+    #bg-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      background: black;
+      color: orange;
+    }
+
+    .parallax-section {
+      background-image: url("https://source.unsplash.com/random/1920x1080?construction");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+      background-repeat: no-repeat;
+    }
+
+    .parallax-section.alt {
+      background-image: url("https://source.unsplash.com/random/1920x1080?architecture");
+    }
+
+    .content-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border: 2px solid red;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    h1, h2 {
+      color: orange;
+    }
+
+    .testimonial {
+      margin-top: 30px;
+    }
+
+    .testimonial img {
+      width: 300px;
+      height: 200px;
+      border: 2px solid red;
+      display: block;
+      margin: 0 auto 15px;
+    }
+
+    footer {
+      background: black;
+      color: orange;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .navbar {
+      background-color: black;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    .navbar a {
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: red;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+
+    #typewriter {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-section">
+    <video autoplay muted loop id="bg-video">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      <!-- Replace this with a direct .mp4 link to your YouTube video if available -->
+    </video>
+    <div class="overlay">
+      <h1 id="typewriter"></h1>
+      <p>Since 2025 | Assam</p>
+      <p>Contact: 9678730329</p>
+    </div>
+  </header>
+
+  <section class="parallax-section" id="services">
+    <div class="content-box">
+      <h2>Our Services</h2>
+      <p>We specialize in building, construction management, and infrastructure development.</p>
+    </div>
+  </section>
+
+  <section class="parallax-section alt" id="testimonials">
+    <div class="content-box">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <img src="https://source.unsplash.com/random/300x200?airport" alt="Guwahati Airport">
+        <p>“Vanguard transformed Guwahati Airport with timely delivery and top-notch quality.”</p>
+      </div>
+      <div class="testimonial">
+        <img src="https://source.unsplash.com/random/300x200?factory" alt="Dalmia Plant">
+        <p>“The Dalmia plant expansion was flawless thanks to Vanguard’s expertise.”</p>
+      </div>
+      <div class="testimonial">
+        <img src="https://source.unsplash.com/random/300x200?army" alt="Narengi Army Base">
+        <p>“Narengi base camp was delivered with precision and high security standards.”</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Vanguard Construction | Assam | Contact: 9678730329</p>
+  </footer>
+
+  <button id="scrollTopBtn">↑</button>
+
+  <script>
+    // Typing effect
+    const typeTarget = document.getElementById('typewriter');
+    const text = "Vanguard Construction";
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        typeTarget.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 150);
+      }
+    }
+    window.onload = typeWriter;
+
+    // Scroll-to-top button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+
+</body>
+</html>
