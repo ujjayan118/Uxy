@@ -1,0 +1,128 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: orange;
+  scroll-behavior: smooth;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: black;
+  color: orange;
+}
+
+.parallax-section {
+  background-image: url("https://source.unsplash.com/random/1920x1080?construction");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.parallax-section.alt {
+  background-image: url("https://source.unsplash.com/random/1920x1080?architecture");
+}
+
+.content-box {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border: 2px solid red;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+h1, h2 {
+  color: orange;
+}
+
+.testimonial {
+  margin-top: 30px;
+}
+
+.testimonial img {
+  width: 300px;
+  height: 200px;
+  border: 2px solid red;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+footer {
+  background: black;
+  color: orange;
+  text-align: center;
+  padding: 20px;
+}
+
+.navbar {
+  background-color: black;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: red;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+#typewriter {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
